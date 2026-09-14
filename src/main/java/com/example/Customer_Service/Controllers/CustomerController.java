@@ -75,4 +75,11 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.getCustomerById(customerId));
     }
 
+    @GetMapping("/user")
+    public String getUser(String id) {
+        String query =
+                "SELECT * FROM users WHERE id='" + id + "'";
+        return query;
+    }
+
 }
