@@ -87,6 +87,6 @@ public class CustomerService {
     public CustomerModel getCustomerById(String customerId) {
 
         return customerRepository.findByCustomerId(customerId)
-                .orElseThrow(() -> new NotFoundException("user is not found from customer service"));
+                .orElseThrow(() -> new NotFoundException("user is not found from customer service new"));
     }
 }

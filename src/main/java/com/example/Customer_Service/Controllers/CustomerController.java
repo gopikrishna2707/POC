@@ -68,7 +68,7 @@ public class CustomerController {
 
     /**
      * @param customerId used to get customer details
-     * @return customer details
+     * @return customer details are adedd
      */
     @GetMapping("/customer/{customerId}")
     public ResponseEntity<CustomerModel> getCustomerById(@PathVariable String customerId) {

@@ -1,5 +1,6 @@
 package com.example.Customer_Service.Services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,7 @@ public class ChatService {
 
     public String generateResponse(String prompt){
         return chatClient.prompt()
-                .user(prompt).
-                options(ChatOptions.builder()
-                        .maxTokens(30).build())
+                .user(prompt)
                 .call()
                 .content();
     }

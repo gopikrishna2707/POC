@@ -17,30 +17,12 @@ public class ChatBotController {
         this.chatService = chatService;
     }
 
-    @GetMapping("/hf")
-    public String test(){
-        return RestClient.create()
-                .get()
-                .uri("https://router.huggingface.co")
-                .retrieve()
-                .body(String.class);
-    }
-
-    @GetMapping("/github")
-    public String github() {
-        return RestClient.create()
-                .get()
-                .uri("https://api.github.com")
-                .retrieve()
-                .body(String.class);
-    }
-
     @PostMapping("/get")
     public String chatRequest(@RequestBody ChatDto chatRequest){
         try {
             return chatService.generateResponse(chatRequest.getMessage());
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             return e.getMessage();
         }
     }
